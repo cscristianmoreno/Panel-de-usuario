@@ -1,0 +1,54 @@
+<div id="id_panel_menu" class="panel_menu_container">
+
+    <div class="panel_menu_image_container">
+        
+        <span class="panel_menu_exit">
+            <i id="id_panel_menu_icon_close" class="fas fa-bars"></i>
+        </span>
+
+        <div class="panel_menu_image">
+            <img id="id_panel_image" src="/images/<%= avatar %>">
+        </div>
+
+
+        <span class="panel_menu_username">
+            <%= name %> <%= surname %>
+        </span>
+    </div>
+
+    <div class="panel_menu_items_title">
+        <span>Mi cuenta</span>
+    </div>
+
+    <div class="panel_menu_items">
+        <a href="inicio">
+            Inicio
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="password">
+            Cambiar contraseña
+            <i class="fas fa-key"></i>
+        </a>
+        <a href="avatar">
+            Cambiar avatar
+            <i class="fas fa-image"></i>
+        </a>
+
+        <% if (admin === 1) { %>
+            <a style="color: orange" href="admin">
+                Panel de administrador
+                <i class="fas fa-tools"></i>
+            </a>
+        <% } else {%>
+            <span>
+                Panel de administrador
+                <i class="fas fa-tools"></i>
+            </span>
+        <% } %>
+        
+        <a href="logout">
+            Cerrar sesión
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+    </div>
+</div>
