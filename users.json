@@ -1,0 +1,44 @@
+
+// COMPRADOR
+{
+    "id": 817655084,
+    "nickname": "TETE2476002",
+    "password": "qatest1142",
+    "site_status": "active",
+    "email": "test_user_41535175@testuser.com"
+}
+
+// VENDEDOR
+{
+    "id": 817656270,
+    "nickname": "TESTFKRSZWHM",
+    "password": "qatest494",
+    "site_status": "active",
+    "email": "test_user_82929371@testuser.com",
+    "Access Token": "APP_USR-912986321659877-090214-8e80de9fbe138212601f5eb28d01c0a9-817656270",
+    "Public Key": "APP_USR-bc51fc0c-3a5c-44bf-81be-c1981cd54e8d",
+    "Client ID": "912986321659877",
+    "Client Secret": "IMw1cdqeER5lhHJSYouLnfDS7NH2PR84"
+}
+
+// TARJETAS
+{
+    {
+        "Tarjeta": "MASTER CARD",
+        "Número": "5031 7557 3453 0604",
+        "Código": "123",
+        "Vencimiento": 11/25
+    },
+    {
+        "Tarjeta": "VISA",
+        "Número": "4509 9535 6623 3704",
+        "Código": "123",
+        "Vencimiento": 11/25
+    },
+    {
+        "Tarjeta": "AMERICAN EXPRESS",
+        "Número": "3711 803032 57522",
+        "Código": "1234",
+        "Vencimiento": 11/25
+    },
+}

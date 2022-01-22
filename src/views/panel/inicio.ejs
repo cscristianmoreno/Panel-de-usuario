@@ -1,0 +1,107 @@
+
+<div class="panel_container">
+
+    <%- include("./panel_encabezado.ejs") %>
+
+    <div id="id_panel_menu_icon_open" class="panel_menu_icon">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="panel_elements_container">
+        <div class="panel_location">
+            <span>Panel / <%= path %></span>
+        </div>
+    </div>
+
+    <div class="panel_elements_container panel_border">
+        <span class="panel_welcome_title">Bienvenido a tu panel de usuario</span>
+        <br>
+        <span class="panel_welcome_subtitle">
+            <i class="fas fa-share"></i>
+            En este sección podrás ver toda la información detallada acerca de tu cuenta. 
+        </span>
+    </div>
+
+    <div class="panel_elements_container panel_border">
+        <div class="panel_title">
+            <h4>Datos personales</h4>
+        </div>
+
+        <div class="panel_date">
+            <span class="panel_date_title">Nombre</span>
+            <span class="panel_date_result"><%= name %></span>
+        </div>
+        <div class="panel_date">
+            <span class="panel_date_title">Apellido</span>
+            <span class="panel_date_result"><%= surname %></span>
+        </div>
+        <div class="panel_date">
+            <span class="panel_date_title">Edad</span>
+            <span class="panel_date_result"><%= new Date().getFullYear() - birth_year %> años</span>
+        </div>
+        <div class="panel_date">
+            <span class="panel_date_title">Fecha de nacimiento</span>
+            <span class="panel_date_result"><%= birth_day %>/<%= birth_month %>/<%= birth_year %></span>
+        </div>
+        <div class="panel_date">
+            <span class="panel_date_title">Sexo</span>
+            <span class="panel_date_result"><%= gender %></span>
+        </div>
+    </div>
+
+    <div class="panel_elements_container panel_border">
+        <div class="panel_title">
+            <h4>Datos de mi cuenta</h4>
+        </div>
+
+        <div class="panel_date">
+            <span class="panel_date_title">Correo electrónico</span>
+            <span><%= email %></span>
+        </div>
+        <div class="panel_date">
+            <span class="panel_date_title">Fecha de registro</span>
+            <span><%= new Date(date_register).toLocaleString()%></span>
+        </div>
+        <div class="panel_date">
+            <span class="panel_date_title">Última sesión</span>
+            <span><%= new Date(last_date).toLocaleString()%></span>
+        </div>
+    </div>
+
+    <div class="panel_elements_container panel_border">
+        <div class="panel_title">
+            <h4>Últimos eventos</h4>
+            
+        </div>
+        
+        <div id="id_panel_table_events" class="panel_table_container">
+        </div>
+    </div>
+
+    <div class="panel_elements_container panel_border">
+        <div class="panel_title">
+            <h4>Tu dinero</h4>
+
+            <br>
+
+            <h1 style="color: #6ec6e4;" id="id_panel_user_money">
+
+            </h1>
+
+            <div class="panel_button_container">
+                <button id="id_button_transfer" class="class_btn_inline">Transferir</button>
+                <button id="id_button_recharge" class="class_btn_inline">Recargar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel_elements_container panel_border">
+        <div class="panel_title">
+            <h3>Tus mensajes</h3>
+
+            <button id="id_panel_new_message" class="btn btn-success">Generar un nuevo mensaje</button>
+        </div>
+                
+        <div id="id_panel_table_messages" class="panel_table_container"></div>
+    </div>
+</div>

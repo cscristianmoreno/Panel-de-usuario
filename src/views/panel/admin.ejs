@@ -1,0 +1,54 @@
+
+<div class="panel_container">
+
+    <%- include("./panel_encabezado.ejs") %>
+
+    <div id="id_panel_menu_icon_open" class="panel_menu_icon">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="panel_elements_container">
+        <div class="panel_location">
+            <span>Panel / <%= path %></span>
+        </div>
+    </div>
+
+    <div class="panel_elements_container panel_border">
+        <span class="panel_welcome_title">Bienvenido Administrador</span>
+        <br>
+        <span class="panel_welcome_subtitle">
+            <i class="fas fa-share"></i>
+            En este sección podrás ver todos los detalles acerca de los usuarios, editar, eliminar, agregar. 
+        </span>
+    </div>
+
+    <div class="panel_elements_container panel_border">
+        <div class="panel_title">
+            <h3>Lista de usuarios</h3>
+
+            <button id="id_panel_new_user" class="btn btn-success">Generar un nuevo usuario</button>
+        </div>
+
+        <div id="id_panel_table_users" class="panel_table_container"></div>
+    </div>
+
+    <div class="panel_elements_container panel_border">
+        <div class="panel_title">
+            <h3>Lista de imágenes</h3>
+
+            <button id="id_panel_new_image" class="btn btn-success">Añadir nueva imagen</button>
+        </div>
+
+        <div class="panel_image_gallery_container">
+            <% image_files.forEach((str, num) => { %>
+                <img class="panel_image_gallery" src="/images/avatar/<%= str %>">
+            <% }) %>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <button id="id_panel_delete_image" class="btn btn-danger">Eliminar imágenes</button>
+        </div>
+    </div>
+</div>

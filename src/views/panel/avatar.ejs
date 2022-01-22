@@ -1,0 +1,45 @@
+
+ <div class="panel_container">
+
+    <%- include("./panel_encabezado.ejs") %>
+
+    <div id="id_panel_menu_icon_open" class="panel_menu_icon">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="panel_elements_container">
+        <div class="panel_location">
+            <span>Panel / <%= path %></span>
+        </div>
+    </div>
+
+    <div class="panel_elements_container panel_border">
+        <span class="panel_welcome_title">Cambiar avatar</span>
+        <br>
+        <span class="panel_welcome_subtitle">
+            <i class="fas fa-share"></i>
+            En esta sección podrás cambiar tu foto de perfil. 
+        </span>
+    </div>
+
+    <div class="panel_elements_container panel_border">
+        <div class="panel_title">
+            <h4>Galería</h4>
+        </div> 
+
+        <h5>Imágenes predeterminadas</h5>
+        
+        <div class="panel_image_gallery_container">
+            <% image_files.forEach((str, num) => { %>
+                <img id="avatar_<%= num + 1 %>" class="panel_image_gallery" src="/images/avatar/<%= str %>">
+            <% }) %>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <button id="id_panel_change_image" class="btn btn-primary">Cambiar avatar</button>
+        </div>
+    </div>
+    <br>
+</div>
