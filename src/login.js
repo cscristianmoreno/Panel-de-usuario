@@ -30,7 +30,7 @@ router.post("/login", [
     body("password")
     .custom((value, { req, res, next }) => {
         
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
             const sql = "SELECT password FROM web_users WHERE email LIKE ?";
 
             connection.query(sql, [req.body.email], async (error, result, field) => {
@@ -38,8 +38,9 @@ router.post("/login", [
                     reject(new Error("Error en el servidor"));
                     return;
                 }
-
-                console.log(result);
+                
+                // const pw = await bcryptjs.hash(req.body.password, 8);
+                // console.log(pw);
 
                 if (!result[0]) {
                     reject(new Error("Los datos ingresados son incorrectos"));
