@@ -1,5 +1,5 @@
 const express = require("express");
-const connection = require("./db/db.js");
+const connection = require("./src/db/db.js");
 const app = express();
 const fs = require("fs");
 
@@ -19,12 +19,12 @@ app.use(express.json());
 app.use(express.static("src/public"));
 
 // Registro & Login
-app.use(require("./registro.js"));
-app.use(require("./login.js"));
-app.use(require("./panel.js"));
-app.use(require("./check_name.js"));
-app.use(require("./checkout.js"));
-app.use(require("./registrar_usuario.js"));
+app.use(require("./src/registro.js"));
+app.use(require("./src/login.js"));
+app.use(require("./src/panel.js"));
+app.use(require("./src/check_name.js"));
+app.use(require("./src/checkout.js"));
+app.use(require("./src/registrar_usuario.js"));
 
 // App Listen
 app.listen(app.get("port"), async (req, res) => {

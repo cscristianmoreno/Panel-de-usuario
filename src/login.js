@@ -22,9 +22,18 @@ const connection = require("./db/db.js");
 const { serialize } = require("v8");
 
 router.get("/login", (req, res, next) => {
+
+    if (req.session.index) {
+        res.redirect("/panel/inicio");
+        return;
+    }
+
     res.render("login.ejs");
 })
 
+router.get("/test", (req, res, next) => {
+    res.send("<h1>test</h1>");
+})
 
 router.post("/login", [
     body("password")

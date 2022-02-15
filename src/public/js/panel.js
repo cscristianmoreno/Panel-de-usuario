@@ -1645,7 +1645,7 @@ const adminDeleteUser = async (myArray) => {
 
     const response = await elementFade(
         array = {
-            "message": `¿Estás seguro de eliminar el usuario ${myArray.name} ${myArray.surname} (#${myArray.id})?`,
+            "message": `¿Estás seguro de eliminar el usuario ${myArray.name} ${myArray.surname} (ID: #${myArray.id})?`,
             "message_type": "TYPE_ANSWER",
             "message_icon": "fa-times",
             "message_background_color": "#e67171",

@@ -512,7 +512,7 @@ router.post("/change_password", [
     body("password_old")
     .custom((value, { req }) => {
         return new Promise((resolve, reject) => {
-            const sql = "SELECT password FROM web_users WHERE id = ?";
+            const sql = "SELECT password, admin FROM web_users WHERE id = ?";
             
             connection.query(sql, [req.session.index], async (error, result, field) => {
                 if (error) {
@@ -521,6 +521,10 @@ router.post("/change_password", [
 
                 if (!result[0]) {
                     reject(new error("Ocurrió un error inesperado en /change_password"));
+                }
+
+                if (result[0].admin === 1) {
+                    reject(new Error("No podés cambiar la contraseña si sos administrador"));
                 }
 
                 const success = await bcryptjs.compare(req.body.password_old, result[0].password);
